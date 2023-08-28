@@ -3,12 +3,12 @@ import { useEnsAvatar, useEnsName } from 'wagmi';
 import "./Profile.css";
 
 const Profile = ({ account }) => {
-  // Use the useEnsName hook to fetch ENS name associated with the connected account
+  // ENS Name
   const { data: ensNameData } = useEnsName({
     address: account,
   });
 
-  // Use the useEnsAvatar hook to fetch the avatar associated with the user's ENS name
+  // ENS Avatar
   const { data: avatarData } = useEnsAvatar({
     name: ensNameData,
     chainID: 1,
@@ -39,8 +39,8 @@ const Profile = ({ account }) => {
       src="https://www.coindesk.com/embedded-chart/Q8fMPPbr6cktp"
       frameBorder="0"
       title="Embedded Graph"
-      width="100%"  // Set the width to 100% to match the container width
-      height="500"  // Adjust the height to your desired value
+      width="100%" 
+      height="500"  
     ></iframe>
   </div>
 </section>
